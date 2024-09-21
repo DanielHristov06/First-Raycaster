@@ -1,14 +1,15 @@
 #include <raylib.h>
-
-const int windowWidth = 1280;
-const int windowHeight = 720;
+#include <settings.cpp>
 
 int main(){
     InitWindow(windowWidth, windowHeight, "Raycaster");
     SetTargetFPS(60);
 
-    while (!WindowShouldClose()) {
+    while (!WindowShouldClose()){
         BeginDrawing();
+
+        ClearBackground(BLACK);
+
         EndDrawing();
     }
 }
