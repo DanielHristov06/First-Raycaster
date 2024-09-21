@@ -1,3 +1,4 @@
+#pragma once
 #define _USE_MATH_DEFINES
 #include <settings.h>
 #include <cmath>
@@ -32,6 +33,6 @@ class Player{
 
         void Draw(){
             DrawCircle(x, y, r, BLUE);
-            DrawLine(x, y, x + cos(angle) * 50, y + sin(angle) * 50, RED);
+            //DrawLine(x, y, x + cos(angle) * 50, y + sin(angle) * 50, RED);
         }
 };

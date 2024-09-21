@@ -1,8 +1,9 @@
 #include <Classes/map.cpp>
-#include <Classes/player.cpp>
+#include <Classes/raycaster.h>
 
 Map map;
 Player player;
+Raycaster raycaster = Raycaster(player);
 
 int main(){
     InitWindow(windowWidth, windowHeight, "Raycaster");
@@ -14,13 +15,14 @@ int main(){
 
         //Updating
         player.Update();
-
-        // Drawing
+        raycaster.castAllRays();
+        
         BeginDrawing();
         ClearBackground(BLACK);
 
         map.Draw();
         player.Draw();
+        raycaster.Draw();
 
         EndDrawing();
     }
