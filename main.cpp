@@ -1,15 +1,23 @@
 #include <raylib.h>
-#include <settings.cpp>
+#include <Classes/map.cpp>
+
+Map map;
 
 int main(){
     InitWindow(windowWidth, windowHeight, "Raycaster");
     SetTargetFPS(60);
 
     while (!WindowShouldClose()){
-        BeginDrawing();
+        // Key Checks
+        if (IsKeyPressed(KEY_ESCAPE)) WindowShouldClose();
 
+        // Drawing
+        BeginDrawing();
         ClearBackground(BLACK);
+
+        map.Draw();
 
         EndDrawing();
     }
+    CloseWindow();
 }
