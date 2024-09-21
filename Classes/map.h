@@ -1,3 +1,4 @@
+#pragma once
 #include <settings.h>
 #include <raylib.h>
 #include <cmath>
@@ -27,8 +28,8 @@ class Map{
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
         };
 
-        bool hasWall(int x, int y){
-            return grid[int(std::floor(y / TILESIZE))][int(std::floor(x / TILESIZE))];
+        bool hasWallAt(int x, int y){
+            return grid[static_cast<int>(std::floor(y / TILESIZE))][static_cast<int>(std::floor(x / TILESIZE))];
         }
 
         void Draw(){

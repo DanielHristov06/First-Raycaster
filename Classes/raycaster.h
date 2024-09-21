@@ -8,8 +8,9 @@ class Raycaster{
     public:
         std::vector<MyRay> rays = {};
         Player& casterPlayer;
+        Map casterMap;
 
-        Raycaster(Player& player) : casterPlayer(player){}
+        Raycaster(Player& player, Map map) : casterPlayer(player), casterMap(map){}
 
         ~Raycaster(){}
 
@@ -18,7 +19,7 @@ class Raycaster{
             double rayAngle = casterPlayer.angle - FOV / 2;
 
             for (int i = 0; i < RAYS; i++){
-                MyRay ray = MyRay(casterPlayer, rayAngle);
+                MyRay ray = MyRay(casterPlayer, rayAngle, casterMap);
                 ray.Cast();
                 rays.push_back(ray);
                 rayAngle += FOV / RAYS;

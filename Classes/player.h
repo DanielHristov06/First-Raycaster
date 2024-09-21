@@ -7,12 +7,12 @@ class Player{
     public:
         int x = windowWidth / 2;
         int y = windowHeight / 2;
-        int r = 10;
+        const int r = 10;
         int turnDirection = 0;
         int walkDirection = 0;
         float angle = 0;
-        float walkSpeed = 2.5;
-        float rotationSpeed = 2 * (M_PI / 180);
+        const float walkSpeed = 3;
+        const float rotationSpeed = 2 * (M_PI / 180);
 
         void Update(){
             turnDirection = 0;

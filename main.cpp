@@ -1,9 +1,8 @@
-#include <Classes/map.cpp>
 #include <Classes/raycaster.h>
 
 Map map;
 Player player;
-Raycaster raycaster = Raycaster(player);
+Raycaster raycaster = Raycaster(player, map);
 
 int main(){
     InitWindow(windowWidth, windowHeight, "Raycaster");
