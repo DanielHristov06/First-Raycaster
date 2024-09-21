@@ -16,10 +16,11 @@ int main(){
         //Updating
         player.Update();
         raycaster.castAllRays();
-        
+
         BeginDrawing();
         ClearBackground(BLACK);
 
+        // Drawing
         map.Draw();
         player.Draw();
         raycaster.Draw();

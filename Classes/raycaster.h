@@ -13,8 +13,6 @@ class Raycaster{
 
         ~Raycaster(){}
 
-        double shit;
-
         void castAllRays(){
             rays.clear();
             double rayAngle = casterPlayer.angle - FOV / 2;
@@ -24,13 +22,11 @@ class Raycaster{
                 ray.Cast();
                 rays.push_back(ray);
                 rayAngle += FOV / RAYS;
-                shit = rayAngle;
             }
         }
 
         void Draw(){
             for (int i = 0; i < rays.size(); i++){
-                DrawText(TextFormat("%i", shit), 64, 64, 64, GREEN);
                 rays[i].Draw();
             }
         }

@@ -27,12 +27,11 @@ class Player{
             float moveStep = walkDirection * walkSpeed;
 
             angle += turnDirection * rotationSpeed;
-            x += cos(angle) * moveStep;
-            y += sin(angle) * moveStep;
+            x += cos(angle) * moveStep * dt;
+            y += sin(angle) * moveStep * dt;
         }
 
         void Draw(){
             DrawCircle(x, y, r, BLUE);
-            //DrawLine(x, y, x + cos(angle) * 50, y + sin(angle) * 50, RED);
         }
 };

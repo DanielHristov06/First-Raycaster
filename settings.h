@@ -4,6 +4,8 @@
 #include <cmath>
 #include <raylib.h>
 
+#define dt GetFrameTime() * 60
+
 const int TILESIZE = 32;
 const int ROWS = 20;
 const int COLS = 25;
