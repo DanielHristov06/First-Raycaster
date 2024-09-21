@@ -1,5 +1,7 @@
+#pragma once
 #define _USE_MATH_DEFINES
 #include <math.h>
+#include <raylib.h>
 
 const int TILESIZE = 32;
 const int ROWS = 20;
