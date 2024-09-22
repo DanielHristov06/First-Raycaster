@@ -13,7 +13,7 @@ int main(){
         if (IsKeyPressed(KEY_ESCAPE)) WindowShouldClose();
 
         //Updating
-        player.Update();
+        player.Update(map);
         raycaster.castAllRays();
 
         BeginDrawing();

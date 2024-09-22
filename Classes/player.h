@@ -1,6 +1,7 @@
 #pragma once
 #define _USE_MATH_DEFINES
 #include <settings.h>
+#include <Classes/map.h>
 #include <cmath>
 
 class Player{
@@ -14,7 +15,7 @@ class Player{
         const float walkSpeed = 3;
         const float rotationSpeed = 2 * (M_PI / 180);
 
-        void Update(){
+        void Update(Map& map){
             turnDirection = 0;
             walkDirection = 0;
 
@@ -27,8 +28,11 @@ class Player{
             float moveStep = walkDirection * walkSpeed;
 
             angle += turnDirection * rotationSpeed;
-            x += cos(angle) * moveStep * dt;
-            y += sin(angle) * moveStep * dt;
+            float newX = x + cos(angle) * moveStep * dt;
+            float newY = y + sin(angle) * moveStep * dt;
+
+            if (!map.hasWallAt(newX, y)) x = newX;
+            if (!map.hasWallAt(x, newY)) y = newY;
         }
 
         void Draw(){
