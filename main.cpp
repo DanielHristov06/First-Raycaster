@@ -20,9 +20,14 @@ int main(){
         ClearBackground(BLACK);
 
         // Drawing
-        map.Draw();
-        player.Draw();
+        //map.Draw();
+        //player.Draw();
+
+        DrawRectangle(0, 0, windowWidth, windowHeight / 2, BLUE);
+        DrawRectangle(0, windowHeight / 2, windowWidth, windowHeight / 2, DARKGREEN);
         raycaster.Draw();
+
+        DrawText(TextFormat("%i", GetFPS()), 32, 32, 32, GREEN);
 
         EndDrawing();
     }

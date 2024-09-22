@@ -11,6 +11,6 @@ const int ROWS = 20;
 const int COLS = 25;
 const int windowWidth = COLS * TILESIZE;
 const int windowHeight = ROWS * TILESIZE;
-const int FOV = 60 * (M_PI / 180);
+const float FOV = 60 * (M_PI / 180);
 const int RES = 4;
 const float RAYS = std::floor(windowWidth / RES);
